@@ -3,8 +3,6 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Navbar from "/src/components/Navbar";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
-import Tienda from "./components/Tienda";
-import OneProducto from "./components/OneProduct";
 import Nosotros from "./components/Nosotros";
 import Login from "./components/Login";
 import Cuenta from "./components/Cuenta";
@@ -12,18 +10,12 @@ import UserRegister from "./components/UserRegister";
 import Inicio from "./components/Inicio";
 import Confirmar from "./components/Confirmar";
 import Administrar from "./components/Administrar";
-import ProductForm from "./components/ProductForm";
-import ProductEditForm from "./components/ProductEditForm";
 import UserRegisterCrud from "./components/UserRegisterCrud";
 import UserEdit from "./components/UserEdit";
 import ContactoRegister from "./components/ContactoRegister";
 import ContactoEdit from "./components/ContactoEdit";
-import SalesEdit from "./components/SalesEdit";
 import PerfilEdit from "./components/PerfilEdit";
-import OneCompra from "./components/OneCompra";
-import OneSale from "./components/OneSale";
-import Cart from './components/Cart';
-import CompraRealizada from './components/CompraRealizada';
+
 
 function App() {
   const [isId, setId] = useState(localStorage.getItem("userId") || "");
@@ -48,13 +40,8 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Inicio />} />
-          <Route path="/tienda" element={<Tienda />} />
-          <Route path="/productos/:id" element={<OneProducto />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="/nosotros" element={<Nosotros />} />
-          <Route path="/carrito" element={<Cart />} />
-          {/* Actualizamos esta ruta para no usar compraId */}
-          <Route path="/compra-realizada" element={<CompraRealizada />} />
           
           <Route
             path="/login"

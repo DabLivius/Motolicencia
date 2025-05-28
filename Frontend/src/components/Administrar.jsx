@@ -2,9 +2,7 @@ import { useState } from "react"
 import SidebarAdmin from "./SidebarAdmin"
 import Welcome from "./Welcome"
 import Contactos from "./Contactos"
-import Product from "./Product"
 import Usuario from "./Usuario"
-import Sales from "./Sales"
 import { useParams } from "react-router-dom";
 
 const Administrar = () => {

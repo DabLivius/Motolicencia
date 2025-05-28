@@ -104,11 +104,11 @@ export const Inicio = () => {
           >
             <div className="container-promo is-centered">
               <h2 className="title is-1 has-text-center newh2">
-                ¡Sí Hay Productos Para Fiestas, De Todos Los Tipos!
+                Con pereza de salir?, nosotros te facilitamos la licencia online!
               </h2>
               <div className="boton-productos">
-                <Link to="/tienda">
-                  <p className="button is-outlined is-info">Ver Productos</p>
+                <Link to="/">
+                  <p className="button is-outlined is-info">Vamos!</p>
                 </Link>
               </div>
             </div>

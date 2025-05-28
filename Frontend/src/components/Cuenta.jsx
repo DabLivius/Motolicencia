@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import SidebarUser from "./SidebarUser";
 import Welcome from "./Welcome";
 import Perfil from "./Perfil";
-import Compras from "./Compras";
 
 const Cuenta = ({setId, setName, setLogin, setType }) => {
     const { id } = useParams();
