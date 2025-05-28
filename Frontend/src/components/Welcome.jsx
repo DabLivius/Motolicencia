@@ -18,7 +18,7 @@ const Welcome = () => {
             Desde aquí podrás gestionar todo lo relacionado con
             { userType == "Administrador" ? 
               (" la página web") 
-              : (" tus compras o tu perfil, así como también cerrar sesión.")}
+              : (" tu perfil, así como también cerrar sesión.")}
           </h2>
         </div>
       </div>

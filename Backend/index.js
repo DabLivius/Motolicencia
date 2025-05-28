@@ -5,8 +5,6 @@ import connectdb from "./config/db.js"
 import cors from "cors"
 import contactoRouters from "./routes/contactoRoutes.js"
 import userRouters from "./routes/userRoutes.js"
-import productoRoutes from "./routes/productoRoutes.js"
-import ventaRoutes from "./routes/ventaRoutes.js"
 
 dotenv.config();
 connectdb();
@@ -44,8 +42,6 @@ app.use(cors(corsOptions));
 
 // Routing
 app.use("/api/usuario", userRouters);
-app.use("/api/producto", productoRoutes);
-app.use("/api/venta", ventaRoutes);
 app.use("/api/contacto", contactoRouters);
 
 const PORT = process.env.PORT || 4000;

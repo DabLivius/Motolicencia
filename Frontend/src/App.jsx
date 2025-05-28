@@ -59,11 +59,6 @@ function App() {
             element={isLogin === "true" ? 
             <Cuenta setId={setId} setName={setName} setLogin={setLogin} setType={setType}/> : <Navigate to="/" />}
           />
-           <Route
-            path="/cuenta/compras/:id"
-            element={isLogin === "true" ? 
-            <OneCompra setId={setId} setName={setName} setLogin={setLogin} setType={setType}/> : <Navigate to="/" />}
-          />
           <Route
             path="/cuenta/perfil/edit/:id"
             element={isLogin === "true" ? 
@@ -76,14 +71,6 @@ function App() {
           <Route
             path="/administracion/:id"
             element={isAdmin() ? <Administrar/> : <Navigate to="/" />}
-          />
-          <Route
-            path="/administracion/productos/register"
-            element={isAdmin() ? <ProductForm /> : <Navigate to="/" />}
-          />
-          <Route
-            path="/administracion/productos/edit/:id"
-            element={isAdmin() ? <ProductEditForm /> : <Navigate to="/" />}
           />
           <Route
             path="/administracion/usuarios/register"
@@ -100,14 +87,6 @@ function App() {
           <Route
             path="/administracion/contactos/edit/:id"
             element={isAdmin() ? <ContactoEdit /> : <Navigate to="/" />}
-          />
-          <Route
-            path="/administracion/ventas/:id"
-            element={isAdmin() ? <OneSale /> : <Navigate to="/" />}
-          />
-          <Route
-            path="/administracion/ventas/edit/:id"
-            element={isAdmin() ? <SalesEdit /> : <Navigate to="/" />}
           />
         </Routes>
 

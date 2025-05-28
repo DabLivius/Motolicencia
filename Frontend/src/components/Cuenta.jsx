@@ -13,8 +13,6 @@ const Cuenta = ({setId, setName, setLogin, setType }) => {
       }
       const renderSelectedComponent = () => {
         switch(selectedOption) {
-          case "compras":
-            return <Compras />;
           case "perfil":
             return <Perfil />;
           default:

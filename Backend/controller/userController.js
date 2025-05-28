@@ -33,12 +33,6 @@ const autenticar = async(req, res) => {
         return res.status(404).json({ msg:error.message})
     }
 
-    if(!usuario.confirmado)
-    {
-        // const error = new Error("Para poder iniciar sesión con este Usuario, por favor haz clic en el enlace que se enviará al correo electrónico previamente proporcionado.")
-        return res.status(403).json({ token:usuario.token })
-    }
-
     if(await usuario.comprobarPassword(password))
     {
         res.json({  
@@ -99,21 +93,20 @@ const confirmar = async (req, res) => {
     }
 }
 
-const restablecer = async (req, res) =>{
+const restablecer = async (req, res) => {
     const { email } = req.body
-    const usuario = await Usuario.findOne({email})
+    const usuario = await Usuario.findOne({ email })
 
-    if(!usuario)
-    {
+    if (!usuario) {
         const error = new Error("El usuario no existe.")
-        return res.status(404).json({ msg:error.message})
+        return res.status(404).json({ msg: error.message })
     }
-    
-    try{
+
+    try {
         usuario.token = generarId()
         await usuario.save()
-        res.json({msg: "Hemos enviado un email con las instrucciones."})
-    }catch (error){
+        res.json({ msg: "Se ha generado un token de recuperación." })
+    } catch (error) {
         console.log(error)
     }
 }

@@ -1,7 +1,6 @@
 import { validateEmail, validatePassword } from "../hooks/useValidations";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import emailjs from '@emailjs/browser';
 import axios from 'axios';
 
 var token=""
@@ -95,27 +94,6 @@ const Login = ({ setId, setName, setLogin, setType }) => {
     }
   };
   
-
-  const sendEmail = async (e) => {
-    e.preventDefault();
-    const templateParams = {
-      to_email: formData.email,
-      message: import.meta.env.VITE_URI_FRONT+"/confirmar/"+token
-    };
-
-    emailjs.send(import.meta.env.VITE_YOUR_SERVICE_ID, import.meta.env.VITE_YOUR_TEMPLATE_ID, templateParams, {
-        publicKey: import.meta.env.VITE_YOUR_PUBLIC_KEY,
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error);
-        },
-      );
-  };
-
   return (
     <>
       <section className="sectiontitle">
@@ -197,16 +175,6 @@ const Login = ({ setId, setName, setLogin, setType }) => {
                  {modalContent}
                 </p>
               </section>
-              {showSendEmailForm && (<footer className="modal-card-foot">
-                <div className="buttons">
-                  <form className="form-email" onSubmit={sendEmail}>
-                    <button className="button is-link"  onClick={() => setShowModal(false)}>
-                      Enviar Correo
-                    </button>
-                  </form>
-                  <Link className="button" to="/login" onClick={() => setShowModal(false)}>Cancelar</Link>
-                </div>
-              </footer>)}
             </div>
           </div>
       </section>

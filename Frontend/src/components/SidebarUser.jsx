@@ -27,7 +27,7 @@ const SidebarUser = ({ handleOptionChange, selectedOption, setId, setName, setLo
                 className={selectedOption === "compras" ? "selected" : ""}
                 onClick={() => handleOptionChange("compras")}
               >
-                <span className="icon"><i className="fa fa-home"></i></span> Mis Compras
+                <span className="icon"><i className="fa fa-home"></i></span> Inicio
               </Link>
             </li>
             <li>

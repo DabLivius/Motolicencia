@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import { Pagination } from './Pagination';
 
 const Usuario = () => {
   const [users, setUsers] = useState([]);
